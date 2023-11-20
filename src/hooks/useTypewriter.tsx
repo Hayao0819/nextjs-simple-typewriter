@@ -21,8 +21,11 @@ export type TypewriterProps = {
   /** Character deleting speed in Milliseconds */
   deleteSpeed?: number;
   /** Delay time between the words in Milliseconds */
-  delaySpeed?: number;
-};
+  delaySpeed?: number
+  /** Start the typewriter from empty or full word */
+  startFrom?: 'empty' | 'full'
+}
+
 
 export type TypewriterHelper = {
   /** `true` if currently typing */
@@ -45,12 +48,13 @@ export const useTypewriter = ({
   onType,
   onDelete,
   onDelay,
+  startFrom = 'empty'
 }: TypewriterProps): [string, TypewriterHelper] => {
   const [{ speed, text, count }, dispatch] = useReducer(reducer, {
     speed: typeSpeed,
-    text: "",
-    count: 0,
-  });
+    text: startFrom === 'full' ? words[0] : '',
+    count: 0
+  })
 
   // Refs
   const loops = useRef(0);
@@ -76,7 +80,7 @@ export const useTypewriter = ({
           isDelay.current = false;
           isDelete.current = true;
         }, delaySpeed);
-
+        
         if (loop > 0) {
           loops.current += 1;
           if (loops.current / words.length === loop) {
