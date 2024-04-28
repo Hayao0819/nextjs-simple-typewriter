@@ -36,7 +36,7 @@ There are two ways to `Typewriter`:
 
 ```jsx
 import React from 'react'
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from 'nextjs-simple-typewriter'
 
 const MyComponent = () => {
   return (
@@ -71,7 +71,7 @@ const MyComponent = () => {
 
 ```jsx
 import React from 'react'
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from 'nextjs-simple-typewriter'
 
 const MyComponent = () => {
 
@@ -120,7 +120,7 @@ const MyComponent = () => {
 | `isDone`   | boolean | Check if all running loops are done |
 
 ```jsx
-import { useTypewriter } from "react-simple-typewriter";
+import { useTypewriter } from "nextjs-simple-typewriter";
 
 const MyComponent = () => {
   /**
@@ -161,7 +161,7 @@ const MyComponent = () => {
 
 ```jsx
 import React from "react";
-import { useTypewriter } from "react-simple-typewriter";
+import { useTypewriter } from "nextjs-simple-typewriter";
 
 const MyComponent = () => {
   const [text] = useTypewriter({
@@ -183,7 +183,7 @@ If you like to have the **Cursor** effect, you can `import` it as a separate `Co
 
 ```jsx
 import React from "react";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { useTypewriter, Cursor } from "nextjs-simple-typewriter";
 
 const MyComponent = () => {
   const [text] = useTypewriter({
